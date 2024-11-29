@@ -1,0 +1,226 @@
+[
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 1,
+    "fields": {
+      "cat_name": "Armor",
+      "parent_cat": null
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 2,
+    "fields": {
+      "cat_name": "Weapons",
+      "parent_cat": null
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 3,
+    "fields": {
+      "cat_name": "Ammunition",
+      "parent_cat": null
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 4,
+    "fields": {
+      "cat_name": "Accessory",
+      "parent_cat": null
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 5,
+    "fields": {
+      "cat_name": "Body Armor",
+      "parent_cat": 1
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 6,
+    "fields": {
+      "cat_name": "Belts",
+      "parent_cat": 1
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 7,
+    "fields": {
+      "cat_name": "Boots",
+      "parent_cat": 1
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 8,
+    "fields": {
+      "cat_name": "Gloves",
+      "parent_cat": 1
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 9,
+    "fields": {
+      "cat_name": "Helmets",
+      "parent_cat": 1
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 10,
+    "fields": {
+      "cat_name": "Shields",
+      "parent_cat": 1
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 11,
+    "fields": {
+      "cat_name": "Axes",
+      "parent_cat": 2
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 12,
+    "fields": {
+      "cat_name": "Bows",
+      "parent_cat": 2
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 13,
+    "fields": {
+      "cat_name": "Crossbows",
+      "parent_cat": 2
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 14,
+    "fields": {
+      "cat_name": "Daggers",
+      "parent_cat": 2
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 15,
+    "fields": {
+      "cat_name": "Spears",
+      "parent_cat": 2
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 16,
+    "fields": {
+      "cat_name": "Swords",
+      "parent_cat": 2
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 17,
+    "fields": {
+      "cat_name": "Wands",
+      "parent_cat": 2
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 18,
+    "fields": {
+      "cat_name": "Arrows",
+      "parent_cat": 3
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 19,
+    "fields": {
+      "cat_name": "Bolts",
+      "parent_cat": 3
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 20,
+    "fields": {
+      "cat_name": "Amulets",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 21,
+    "fields": {
+      "cat_name": "Charms",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 22,
+    "fields": {
+      "cat_name": "Gems",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 23,
+    "fields": {
+      "cat_name": "Jewels",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 24,
+    "fields": {
+      "cat_name": "Keys",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 25,
+    "fields": {
+      "cat_name": "Potions",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 26,
+    "fields": {
+      "cat_name": "Rings",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 27,
+    "fields": {
+      "cat_name": "Runes",
+      "parent_cat": 4
+    }
+  },
+  {
+    "model": "exomarket_app.itemcategory",
+    "pk": 28,
+    "fields": {
+      "cat_name": "Scrolls",
+      "parent_cat": 4
+    }
+  }
+]
