@@ -1,0 +1,35 @@
+CATEGORY_CHOICES = [
+        ("armor", "Armor"),
+        ("weapons", "Weapons"),
+        ("ammunition", "Ammunition"),
+        ("accessory", "Accessory"),
+    ]
+    ARMOR_CHOICES = [
+        ("barmor", "Body Armor"),
+        ("belt", "Belt"),
+        ("boot", "Boot"),
+        ("glove", "Glove"),
+        ("helm", "Helm"),
+        ("shield", "Shield"),
+    ]
+    WEAPON_CHOICES = [
+        ("axe", "Axe"),
+        ("bow", "Bow"),
+        ("crossbow", "Crossbow"),
+        ("dagger", "Dagger"),
+        ("spear", "Spear"),
+        ("sword", "Sword"),
+        ("wand", "Wand"),
+    ]
+    AMMUNITION_CHOICES = [("arrow", "Arrow"), ("bolt", "Bolt")]
+    ACCESSORY_CHOICES = [
+        ("amulet", "Amulet"),
+        ("charm", "Charm"),
+        ("gem", "Gem"),
+        ("jewel", "Jewel"),
+        ("key", "Key"),
+        ("potion", "Potion"),
+        ("ring", "Ring"),
+        ("rune", "Rune"),
+        ("scroll", "Scroll"),
+    ]

@@ -34,58 +34,35 @@ class CustomUser(AbstractUser):
         return self.username
 
 
+class ItemCategory(models.Model):
+    cat_name = models.CharField(max_length=50, unique=True)  # cat=category
+    parent_cat = models.ForeignKey(
+        "ItemCategory",
+        on_delete=models.CASCADE,
+        null=True,  # NULL, if no parent_cat (if input is blank)
+        blank=True,  # makes it optional (if blank, will be NULL in DB)
+        related_name="item_category",
+    )
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        # show hierarchy, if exists
+        if self.parent_cat:
+            return f"{self.parent_cat.cat_name} -> {self.cat_name}"
+        return self.cat_name
+
+
 class Item(models.Model):
-    CATEGORY_CHOICES = [
-        ("armor", "Armor"),
-        ("weapons", "Weapons"),
-        ("ammunition", "Ammunition"),
-        ("accessory", "Accessory"),
-    ]
-    # ARMOR_CHOICES = [
-    #     ("barmor", "Body Armor"),
-    #     ("belt", "Belt"),
-    #     ("boot", "Boot"),
-    #     ("glove", "Glove"),
-    #     ("helm", "Helm"),
-    #     ("shield", "Shield"),
-    # ]
-    # WEAPON_CHOICES = [
-    #     ("axe", "Axe"),
-    #     ("bow", "Bow"),
-    #     ("crossbow", "Crossbow"),
-    #     ("dagger", "Dagger"),
-    #     ("spear", "Spear"),
-    #     ("sword", "Sword"),
-    #     ("wand", "Wand"),
-    # ]
-    # AMMUNITION_CHOICES = [("arrow", "Arrow"), ("bolt", "Bolt")]
-    # ACCESSORY_CHOICES = [
-    #     ("amulet", "Amulet"),
-    #     ("charm", "Charm"),
-    #     ("gem", "Gem"),
-    #     ("jewel", "Jewel"),
-    #     ("key", "Key"),
-    #     ("potion", "Potion"),
-    #     ("ring", "Ring"),
-    #     ("rune", "Rune"),
-    #     ("scroll", "Scroll"),
-    # ]
     item_name = models.CharField(max_length=25)
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=20)
-    # armor_subcategory = models.CharField(
-    #     choices=ARMOR_CHOICES, max_length=20, blank=True
-    # )
-    # weapon_subcategory = models.CharField(
-    #     choices=WEAPON_CHOICES, max_length=20, blank=True
-    # )
-    # ammunition_subcategory = models.CharField(
-    #     choices=AMMUNITION_CHOICES, max_length=20, blank=True
-    # )
-    # accessory_subcategory = models.CharField(
-    #     choices=ACCESSORY_CHOICES, max_length=20, blank=True
-    # )
+    category = models.ForeignKey(
+        ItemCategory, on_delete=models.CASCADE, related_name="items"
+    )
     price = models.FloatField()
-    seller = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    seller = models.ForeignKey(
+        CustomUser, on_delete=models.CASCADE, related_name="items_to_sell"
+    )
     creation_date = models.DateTimeField(default=timezone.now)
     image = models.ImageField(upload_to="item_image/", blank=True)
 
@@ -96,7 +73,7 @@ class Item(models.Model):
 class Cart(models.Model):
     user = models.OneToOneField(
         CustomUser, on_delete=models.CASCADE, related_name="cart"
-    )
+    )  # a user can have only one cart
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -106,16 +83,25 @@ class Cart(models.Model):
 
 class CartItem(models.Model):
     cart = models.ForeignKey(
-        Cart, on_delete=models.CASCADE, related_name="items"
-    )
+        Cart, on_delete=models.CASCADE, related_name="cart_items"
+    )  # a CartItem belongs to one Cart, but a Cart can contain multiple CartItems.
     item = models.ForeignKey(
         Item, on_delete=models.CASCADE, related_name="cart_items"
-    )
+    )  # a CartItem represents one specific Item, but the same Item can appear in multiple CartItems
     quantity = models.PositiveIntegerField(default=1)
-    price = models.FloatField(default=0.0)
+    price = models.FloatField(
+        default=0.0
+    )  # is set when creating the model CartItem
 
     def __str__(self) -> str:
-        return f"{self.quantity} x {self.item.item_name} in {self.cart.user.username}'s cart"
+        return f"{self.quantity} x {self.item.item_name} in cart"
 
     def total_price(self):
         return self.quantity * self.price
+
+    def save(self, *args, **kwargs):
+        if not self.pk:  # when creating a new CartItem
+            self.price = (
+                self.item.price
+            )  # set the CartItem.price to the price of the Item it refers to
+        super().save(*args, **kwargs)
