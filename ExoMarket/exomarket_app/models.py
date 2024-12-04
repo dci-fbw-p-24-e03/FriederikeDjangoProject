@@ -1,6 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
+from django.core.validators import RegexValidator
+from django.contrib.auth.models import AbstractUser
+from profanity.validators import validate_is_profane
+from .validators import validate_user_age
 
 
 class CustomUser(AbstractUser):
@@ -21,14 +24,46 @@ class CustomUser(AbstractUser):
         ("pf", "Pandemonium Fortress"),
         ("ha", "Harrogath"),
     ]
+
+    PHONE_VALIDATOR = [
+        RegexValidator(
+            regex=r"(\(?([\d \-\)\–\+\/\(]+){6,}\)?([ .\-–\/]?)([\d]+))",
+            message=(
+                "Enter a valid phone number. The phone number must:\n"
+                "- Be at least 6 characters long\n"
+                "- May include an optional country code, starting with '+'\n"
+                "- Contain only digits, spaces, parentheses, dashes ('-'), slashes ('/'), or dots ('.')\n"
+                "- Allow optional separators (spaces, dashes, or slashes) between sections\n"
+                "- Be a sequence of valid characters that form a plausible number."
+            ),
+        )
+    ]
+
+    date_of_birth = models.DateField(
+        validators=[validate_user_age], default=timezone.now
+    )
     profession = models.CharField(
-        choices=PROFESSION_CHOICES, max_length=15, blank=True
+        choices=PROFESSION_CHOICES,
+        max_length=15,
+        blank=True,
     )
     location = models.CharField(
         choices=TOWN_CHOICES, max_length=25, blank=True
     )
-    phone_number = models.CharField(max_length=20, blank=True)
+    phone_number = models.CharField(
+        max_length=20,
+        blank=True,
+        validators=PHONE_VALIDATOR,
+    )
     # sex = models.CharField(choices=SEX_CHOICES, max_length=10)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["username", "date_of_birth"],
+                name="unique_username_birthday",
+            )
+        ]
 
     def __str__(self) -> str:
         return self.username
@@ -45,6 +80,7 @@ class ItemCategory(models.Model):
     )
 
     class Meta:
+        verbose_name = "Category"
         verbose_name_plural = "Categories"
 
     def __str__(self):
@@ -64,7 +100,18 @@ class Item(models.Model):
         CustomUser, on_delete=models.CASCADE, related_name="items_to_sell"
     )
     creation_date = models.DateTimeField(default=timezone.now)
+    description = models.TextField(
+        validators=[validate_is_profane], default=f"This is a {category}"
+    )
     image = models.ImageField(upload_to="item_image/", blank=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["item_name", "category", "seller"],
+                name="unique_itemname_category_seller",
+            )
+        ]
 
     def __str__(self) -> str:
         return self.item_name
