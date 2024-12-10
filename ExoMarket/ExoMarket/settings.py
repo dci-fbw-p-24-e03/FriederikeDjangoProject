@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -128,4 +129,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "exomarket_app.CustomUser"
 
-MEDIA_URL = "./item_image/"
+# directory to save uploaded files
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# URL to find media files
+MEDIA_URL = "/media/"

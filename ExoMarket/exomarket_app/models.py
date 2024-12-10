@@ -7,23 +7,24 @@ from .validators import validate_user_age
 
 
 class CustomUser(AbstractUser):
-    # SEX_CHOICES = [("M", "Male"), ("F", "Female")]
-    PROFESSION_CHOICES = [
-        ("amazon", "Amazon"),
-        ("necromancer", "Necromancer"),
-        ("barbarian", "Barbarian"),
-        ("mage", "Mage"),
-        ("paladin", "Paladin"),
-        ("assassin", "Assassin"),
-        ("druid", "Druid"),
-    ]
-    TOWN_CHOICES = [
-        ("re", "Rogue Encampment"),
-        ("lg", "Lut Gholein"),
-        ("kd", "Kurast Docks"),
-        ("pf", "Pandemonium Fortress"),
-        ("ha", "Harrogath"),
-    ]
+    SEX_CHOICES = {"M": "Male", "F": "Female"}
+    PROFESSION_CHOICES = {
+        "AM": "Amazon",
+        "NE": "Necromancer",
+        "BA": "Barbarian",
+        "MA": "Mage",
+        "PA": "Paladin",
+        "AS": "Assassin",
+        "DR": "Druid",
+    }
+
+    TOWN_CHOICES = {
+        "RE": "Rogue Encampment",
+        "LG": "Lut Gholein",
+        "KD": "Kurast Docks",
+        "PF": "Pandemonium Fortress",
+        "HA": "Harrogath",
+    }
 
     PHONE_VALIDATOR = [
         RegexValidator(
@@ -55,7 +56,7 @@ class CustomUser(AbstractUser):
         blank=True,
         validators=PHONE_VALIDATOR,
     )
-    # sex = models.CharField(choices=SEX_CHOICES, max_length=10)
+    sex = models.CharField(choices=SEX_CHOICES, max_length=10)
 
     class Meta:
         constraints = [
@@ -91,6 +92,13 @@ class ItemCategory(models.Model):
 
 
 class Item(models.Model):
+    RARITY_CHOICES = {
+        "N": "Normal",
+        "M": "Magic",
+        "R": "Rare",
+        "S": "Set",
+        "U": "Unique",
+    }
     item_name = models.CharField(max_length=25)
     category = models.ForeignKey(
         ItemCategory, on_delete=models.CASCADE, related_name="items"
@@ -101,9 +109,14 @@ class Item(models.Model):
     )
     creation_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(
-        validators=[validate_is_profane], default=f"This is a {category}"
+        validators=[validate_is_profane],
+        default=f"This is aitem of the category {category}",
     )
-    image = models.ImageField(upload_to="item_image/", blank=True)
+    image = models.ImageField(upload_to="item_images/", blank=True)
+    quantity = models.IntegerField(null=True)
+    rarity = models.CharField(
+        choices=RARITY_CHOICES, max_length=10, blank=True
+    )
 
     class Meta:
         constraints = [
