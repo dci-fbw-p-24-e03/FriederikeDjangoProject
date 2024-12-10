@@ -33,3 +33,33 @@ CATEGORY_CHOICES = [
         ("rune", "Rune"),
         ("scroll", "Scroll"),
     ]
+
+>>> user = CustomUser.objects.get(username="Olnururluln")
+>>> user.set_password("password123")
+
+>>> user = CustomUser.objects.get(username="Giamdic")
+>>> user.set_password("password456")
+
+>>> user = CustomUser.objects.get(username="Vagra")
+>>> user.set_password("password789")
+
+>>> user = CustomUser.objects.get(username="Luthmas")
+>>> user.set_password("password012")
+
+>>> user = CustomUser.objects.get(username="Dothmimdu")
+>>> user.set_password("password345")
+
+>>> user = CustomUser.objects.get(username="Loeldendo")
+>>> user.set_password("password678")
+
+>>> user = CustomUser.objects.get(username="Lalnilmiar")
+>>> user.set_password("password901")
+
+>>> user = CustomUser.objects.get(username="Kethmalmar")
+>>> user.set_password("password234")
+
+>>> user = CustomUser.objects.get(username="Garindia")
+>>> user.set_password("password567")
+
+>>> user = CustomUser.objects.get(username="Thraldan")
+>>> user.set_password("password890")
