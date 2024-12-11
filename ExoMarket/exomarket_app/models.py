@@ -5,6 +5,8 @@ from django.contrib.auth.models import AbstractUser
 from profanity.validators import validate_is_profane
 from .validators import validate_user_age
 
+from PIL import Image
+
 
 class CustomUser(AbstractUser):
     SEX_CHOICES = {"M": "Male", "F": "Female"}
@@ -110,13 +112,22 @@ class Item(models.Model):
     creation_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(
         validators=[validate_is_profane],
-        default=f"This is aitem of the category {category}",
+        default=f"This is an item of the category {category}",
     )
     image = models.ImageField(upload_to="item_images/", blank=True)
     quantity = models.IntegerField(null=True)
     rarity = models.CharField(
         choices=RARITY_CHOICES, max_length=10, blank=True
     )
+
+    # resize images that are to big and save the resized version
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image:
+            img = Image.open(self.image.path)
+            if img.height > 300 or img.width > 300:
+                img = img.resize((300, 300))
+                img.save(self.image.path)
 
     class Meta:
         constraints = [

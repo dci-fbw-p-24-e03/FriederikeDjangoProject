@@ -130,7 +130,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "exomarket_app.CustomUser"
 
 # directory to save uploaded files
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "ExoMarket", "media")
 
 # URL to find media files
 MEDIA_URL = "/media/"

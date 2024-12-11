@@ -1,0 +1,21 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>All available Items:</h1>
+    <ul>
+      {% for item in items_list %}
+      <li>
+        {{item.item_name}}:
+        <img src="{{item.image.url}}" alt="{{item.item_name}}" />
+        <p>Media URL: {{ item.image.url }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
