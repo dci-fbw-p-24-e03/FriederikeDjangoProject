@@ -16,7 +16,7 @@ class UserProfileView(DetailView):
 
 class ItemsListView(ListView):
     model = Item
-    template_name = "exomarket_app/items_overview.html"
+    template_name = "exomarket_app/item_card.html"
     context_object_name = "items_list"
 
 

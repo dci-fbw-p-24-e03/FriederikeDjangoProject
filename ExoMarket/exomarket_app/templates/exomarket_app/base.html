@@ -4,18 +4,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static '/css/base_style.css' %}" />
     <title>Document</title>
   </head>
   <body>
-    <header>
+    <section>
       <nav>
-        <ul>
-          <li><a href="{% url 'exomarket:home' %}">Home</a></li>
-          <li><a href="{% url 'exomarket:marketplace' %}">Marketplace</a></li>
-          <li><a href="{% url 'exomarket:about'%}">About</a></li>
+        <ul class="menuItems">
+          <li><a href="{% url 'exomarket:home' %}" data-item='Home'>Home</a></li>
+          <li><a href="{% url 'exomarket:marketplace' %}" data-item='Marketplace'>Marketplace</a></li>
+          <li><a href="{% url 'exomarket:about'%}" data-item='About'>About</a></li>
         </ul>
       </nav>
-    </header>
+    </section>
+
     <main>{% block content %} {% endblock %}</main>
+    
+    <footer>
+      <div class="footer-copyright text-center">&copy; Developed with ❤️</i> by
+        <a href="https://grohit.com/" class="white-text" target="_blank">F Lessmoellmann</a>
+      </div>
+    </footer>
   </body>
 </html>

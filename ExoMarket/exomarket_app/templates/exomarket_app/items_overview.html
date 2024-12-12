@@ -8,14 +8,14 @@
   </head>
   <body>
     <h1>All available Items:</h1>
-    <ul>
+    <table>
       {% for item in items_list %}
-      <li>
-        {{item.item_name}}:
-        <img src="{{item.image.url}}" alt="{{item.item_name}}" />
-        <p>Media URL: {{ item.image.url }}</p>
-      </li>
+      <tr>
+        <td><img src="{{item.image.url}}" alt="{{item.item_name}}" /></td>
+        <td>{{item.item_name}}</td>
+        <td>{{item.quantity}}</td>
+      </tr>
       {% endfor %}
-    </ul>
+    </table>
   </body>
 </html>

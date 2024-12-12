@@ -120,6 +120,12 @@ class Item(models.Model):
         choices=RARITY_CHOICES, max_length=10, blank=True
     )
 
+    @property
+    def days_online(self):
+        """Compute how long the item has been online"""
+        time_online = timezone.now() - self.creation_date
+        return time_online.days
+
     # resize images that are to big and save the resized version
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
