@@ -11,18 +11,43 @@
     <section>
       <nav>
         <ul class="menuItems">
-          <li><a href="{% url 'exomarket:home' %}" data-item='Home'>Home</a></li>
-          <li><a href="{% url 'exomarket:marketplace' %}" data-item='Marketplace'>Marketplace</a></li>
-          <li><a href="{% url 'exomarket:about'%}" data-item='About'>About</a></li>
+          <li>
+            <a href="{% url 'exomarket:home' %}" data-item="Home">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'exomarket:marketplace' %}" data-item="Marketplace"
+              >Marketplace</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'exomarket:about'%}" data-item="About">About</a>
+          </li>
+          {%if request.user.is_authenticated %}
+          <li>
+            <a
+              href="{% url 'exomarket:user-profile' request.user.username %}"
+              data-item="{{request.user.username}}'s Profile"
+              >{{request.user.username}}'s Profile</a
+            >
+          </li>
+          <li>
+            <form method="post" action="{% url 'exomarket:logout' %}">
+              {% csrf_token %}
+              <button type="submit" data-item="Logout">Logout</button>
+            </form>
+          </li>
+          {% else %}
+          <li><a href="{%url 'exomarket:login' %}">Login</a></li>
+          {% endif %}
         </ul>
       </nav>
     </section>
 
     <main>{% block content %} {% endblock %}</main>
-    
+
     <footer>
-      <div class="footer-copyright text-center">&copy; Developed with ❤️</i> by
-        <a href="https://grohit.com/" class="white-text" target="_blank">F Lessmoellmann</a>
+      <div class="footer-copyright text-center">
+        &copy; Developed with ❤️ by F Lessmoellmann
       </div>
     </footer>
   </body>

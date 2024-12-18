@@ -14,7 +14,7 @@
   text-align: center;
   border-radius: 5px;
   overflow: hidden;
-  margin: 3em 3em;
+  margin: 1em 1em;
   height: 350px;
   width: 700px;
   display: inline-block;
@@ -138,7 +138,7 @@
   overflow: hidden;
   height: 100%;
   float: right;
-  width: 45%;
+  width: 50%;
 }
 
 #container img {
@@ -170,8 +170,32 @@
   transform: translateX(0);
 }
 
+.info ul {
+  list-style: disc; 
+  list-style-position: inside; 
+  padding-left: 20px; 
+  margin: 0; 
+}
+
 .info ul li {
   transition: 0.3s ease;
+}
+
+/* color change for rarity value */
+.rarity-normal {
+  color: inherit; 
+}
+.rarity-magic {
+  color: blue;
+}
+.rarity-rare {
+  color: rgba(255, 255, 0, 0.836);
+}
+.rarity-set {
+  color: green;
+}
+.rarity-unique {
+  color: rgba(211, 153, 44, 0.842);
 }
 
 .info ul li:hover {

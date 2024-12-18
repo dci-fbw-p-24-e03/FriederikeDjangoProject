@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap");
+
+#container {
+  box-shadow: 0 15px 30px 1px #4e5250;
+  background: #e8e7e1;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1em 1em;
+  height: 350px;
+  width: 700px;
+  display: inline-block;
+}
+
+.login-widgets {
+  text-align: center;
+  overflow: hidden;
+  padding: 30px;
+  height: 100%;
+  float: center;
+}
+
+#container .login-widgets h1 {
+  display: block;
+  font-size: 30px;
+  color: #35686d;
+  margin: 1em;
+}
+
+.form-group {
+  margin: 1em;
+}
+
+#id_username {
+  margin: 0.5em;
+  font-size: 20px;
+}
+
+#id_password {
+  margin: 0.5em;
+  font-size: 20px;
+}
+
+.btn-primary {
+  font-size: 20px;
+  color: #35686d;
+  padding: 0.2em;
+}

@@ -98,6 +98,40 @@ nav {
     }
   }
 }
+
+nav .menuItems li form > button[data-item="Logout"] {
+  background: none;
+  border: none;
+  color: #35686d;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  font-family: Hack, monospace;
+
+  &::before {
+    content: attr(data-item);
+    transition: 0.5s;
+    color: #50284b;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
 footer {
   display: block;
   position: relative;

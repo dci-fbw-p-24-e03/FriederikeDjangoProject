@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "exomarket_app",
     "profanity",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -121,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "ExoMarket", 'static') ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "ExoMarket", "static")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -135,3 +137,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "ExoMarket", "media")
 
 # URL to find media files
 MEDIA_URL = "/media/"
+
+# assign a CSS framework
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# define where to redirect upon user login and logout
+LOGIN_REDIRECT_URL = "/marketplace/"
+

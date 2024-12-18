@@ -1,7 +1,7 @@
 {% extends 'exomarket_app/base.html' %} {% load static %} {% block content %}
 <link
   rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 />
 <link rel="stylesheet" href="{% static '/css/item_card_style.css' %}" />
 <div id="items-wrapper">
@@ -16,7 +16,7 @@
 
       <div class="control">
         <button class="btn">
-          <span class="price">§{{ item.price }}</span>
+          <span class="price"><i class="fa fa-coins"></i> {{ item.price }}</span>
           <span class="shopping-cart"
             ><i class="fa fa-shopping-cart" aria-hidden="true"></i
           ></span>
@@ -33,7 +33,16 @@
         <ul>
           <li><strong>Seller : </strong>{{ item.seller }}</li>
           <li><strong>Price : </strong>{{ item.price }} Gold</li>
-          <li><strong>Rarity: </strong>{{ item.rarity }}</li>
+          <li>
+            <strong>Rarity: </strong>
+            <span 
+              class="
+                {% if item.rarity == 'N' %}rarity-normal{% elif item.rarity == 'M' %}rarity-magic
+                {% elif item.rarity == 'R' %}rarity-rare{% elif item.rarity == 'S' %}rarity-set
+                {% elif item.rarity == 'U' %}rarity-unique{% endif %}">
+              {{ item.get_rarity_display }}
+            </span>
+          </li>
           <li><strong>Days online: </strong>{{ item.days_online }}</li>
         </ul>
       </div>
