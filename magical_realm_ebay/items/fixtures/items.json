@@ -1,0 +1,150 @@
+[
+  {
+    "model": "items.item",
+    "pk": 1,
+    "fields": {
+      "item_name": "Scroll of Town Portal",
+      "category": 28,
+      "price": 5,
+      "owner": 5,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "opens a gateway from the wilderness to the nearest town",
+      "image": "item_images/townportal_scroll.webp",
+      "quantity": 1,
+      "rarity": "M"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 2,
+    "fields": {
+      "item_name": "Scroll of Identify",
+      "category": 28,
+      "price": 5,
+      "owner": 8,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "contains a magical spell aloowing the user to see the hidden attributes of an item",
+      "image": "item_images/identify_scroll.webp",
+      "quantity": 1,
+      "rarity": "M"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 3,
+    "fields": {
+      "item_name": "Tome of Town Portal",
+      "category": 28,
+      "price": 30,
+      "owner": 7,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "can hold up to 20 Scrolls of Town Portal",
+      "image": "item_images/townportal_tome.webp",
+      "quantity": 1,
+      "rarity": "M"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 4,
+    "fields": {
+      "item_name": "Tome of Identify",
+      "category": 28,
+      "price": 30,
+      "owner": 10,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "can hold up to 20 Scrolls of Identify",
+      "image": "item_images/townportal_scroll.webp",
+      "quantity": 1,
+      "rarity": "M"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 5,
+    "fields": {
+      "item_name": "Hellslayer",
+      "category": 11,
+      "price": 150,
+      "owner": 10,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "pretty good looking Axe, but it is crippled with its low minimum damage. It is also very slow, missing some important attack speed breakpoints",
+      "image": "item_images/hellslayer_axe.png",
+      "quantity": 1,
+      "rarity": "U"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 6,
+    "fields": {
+      "item_name": "Bul-Kathos' Wedding Band",
+      "category": 26,
+      "price": 1300,
+      "owner": 12,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "gives a fair bonus to life as well as a skill boost and life leech",
+      "image": "item_images/bulkathos_wedding_band_ring.webp",
+      "quantity": 1,
+      "rarity": "U"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 7,
+    "fields": {
+      "item_name": "The Rising Sun",
+      "category": 20,
+      "price": 900,
+      "owner": 11,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "used for its Fire Absorb stat. Paired with high fire resist the wearer becomes more or less immune to fire damage, especially from smaller hits",
+      "image": "item_images/risingsun_amulet.webp",
+      "quantity": 1,
+      "rarity": "U"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 8,
+    "fields": {
+      "item_name": "Wyrmhide Boots",
+      "category": 7,
+      "price": 80,
+      "owner": 5,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "image": "item_images/wyrmhide_boots.webp",
+      "quantity": 1,
+      "rarity": "N"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 9,
+    "fields": {
+      "item_name": "Blade Barrier",
+      "category": 10,
+      "price": 230,
+      "owner": 7,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "image": "item_images/bladebarrier_shield.webp",
+      "quantity": 1,
+      "rarity": "R"
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 10,
+    "fields": {
+      "item_name": "Blackhand Key",
+      "category": 17,
+      "price": 3200,
+      "owner": 13,
+      "creation_date": "2025-01-02T12:00:00Z",
+      "description": "ua decent mid-level option for most Necromancers",
+      "image": "item_images/blackhandkey_wand.webp",
+      "quantity": 1,
+      "rarity": "R"
+    }
+  }
+]

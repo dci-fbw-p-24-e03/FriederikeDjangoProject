@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap");
+
+/* Container for the entire cart page */
+#cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Cart card styling */
+.cart-card {
+  box-shadow: 0 15px 30px 1px #4e5250;
+  background: #e8e7e1;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 20px;
+  width: 700px;
+}
+
+/* Cart header */
+.cart-card h2 {
+  font-size: 24px;
+  color: #35686d;
+  margin-bottom: 15px;
+}
+
+/* List of items in the cart */
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual item in the cart */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Item details */
+.item-details {
+  text-align: left;
+  font-size: 16px;
+  color: #6c7673;
+}
+
+.item-details h4 {
+  font-size: 18px;
+  color: #35686d;
+}
+
+.item-details p {
+  margin: 5px 0;
+}
+
+/* Buttons */
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: #35686d;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #99a8d2;
+}
+
+/* Secondary button */
+.btn-secondary {
+  background-color: #50284b;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #99a8d2;
+}

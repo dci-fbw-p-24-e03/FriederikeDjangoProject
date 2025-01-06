@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap");
+
+#profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.profile-card,
+.items-card {
+  box-shadow: 0 15px 30px 1px #4e5250;
+  background: #e8e7e1;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 20px;
+  width: 700px;
+}
+
+.profile-card h2 {
+  font-size: 24px;
+  color: #35686d;
+  margin-bottom: 15px;
+}
+
+.profile-card p {
+  font-size: 16px;
+  color: #6c7673;
+  margin: 5px 0;
+}
+
+.items-card h3 {
+  font-size: 20px;
+  color: #35686d;
+  margin-bottom: 15px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.item-card {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px;
+  padding: 10px;
+}
+
+.item-card img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.item-card h4 {
+  font-size: 18px;
+  color: #35686d;
+}
+
+.item-card p {
+  font-size: 14px;
+  color: #6c7673;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.btn-primary {
+  background-color: #35686d;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #99a8d2;
+}
+
+.btn-secondary {
+  background-color: #35686d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #99a8d2;
+}

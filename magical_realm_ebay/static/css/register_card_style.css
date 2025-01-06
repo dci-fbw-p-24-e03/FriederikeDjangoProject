@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap");
+
+#container {
+  box-shadow: 0 15px 30px 1px #4e5250;
+  background: #e8e7e1;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1em 1em;
+  height: auto;
+  width: 700px;
+  display: inline-block;
+  padding: 20px;
+}
+
+.register-widgets {
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  height: 100%;
+  float: center;
+}
+
+#container .register-widgets h1 {
+  display: block;
+  font-size: 30px;
+  color: #35686d;
+  margin: 1em;
+}
+
+.form-group {
+  margin: 1em;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+  color: #35686d;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group .form-text {
+  font-size: 12px;
+  color: #6c7673;
+}
+
+.form-group .form-error {
+  color: #ff0000;
+  font-size: 14px;
+}
+
+.btn-primary {
+  font-size: 20px;
+  color: #e8e7e1;
+  background-color: #35686d;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #99a8d2;
+}

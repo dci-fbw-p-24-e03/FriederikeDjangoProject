@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Link to the custom CSS file -->
+<link rel="stylesheet" href="{% static 'css/add_item_card_style.css' %}" />
+
+<h2>Add Item to Sell</h2>
+<div id="container">
+  <div class="form-widgets">
+    <h1 class="form-title">Add Item</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+      <button type="submit" class="btn btn-primary">Add Item</button>
+      <a href="{% url 'user_profile' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

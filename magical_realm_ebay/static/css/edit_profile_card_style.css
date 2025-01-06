@@ -1,0 +1,75 @@
+/* static/css/edit_profile_style.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap");
+
+#container {
+  box-shadow: 0 15px 30px 1px #4e5250;
+  background: #e8e7e1;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1em auto;
+  padding: 20px;
+  width: 700px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #35686d;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: bold;
+  color: #35686d;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-error {
+  color: #ff0000;
+  font-size: 14px;
+}
+
+button.btn {
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #35686d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-secondary {
+  background-color: #e8e7e1;
+  color: #35686d;
+  padding: 10px 20px;
+  border: 1px solid #35686d;
+  border-radius: 5px;
+}
+
+input[readonly],
+input[disabled] {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}

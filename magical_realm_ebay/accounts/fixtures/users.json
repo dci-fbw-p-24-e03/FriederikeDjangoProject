@@ -1,0 +1,152 @@
+[
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 4,
+        "fields": {
+            "username": "Olnururluln",
+            "email": "olnururluln@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1984-07-12",
+            "profession": "NE",
+            "phone_number": "+1234567890",
+            "sex": "M",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 5,
+        "fields": {
+            "username": "Giamdic",
+            "email": "giamdic@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1978-03-15",
+            "profession": "MA",
+            "phone_number": "+9876543210",
+            "sex": "F",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 6,
+        "fields": {
+            "username": "Vagra",
+            "email": "vagra@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1990-05-22",
+            "profession": "BA",
+            "phone_number": "+1122334455",
+            "sex": "M",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 7,
+        "fields": {
+            "username": "Luthmas",
+            "email": "luthmas@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1982-11-09",
+            "profession": "PA",
+            "phone_number": "+5566778899",
+            "sex": "M",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 8,
+        "fields": {
+            "username": "Dothmimdu",
+            "email": "dothmimdu@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1995-04-14",
+            "profession": "DR",
+            "phone_number": "+9988776655",
+            "sex": "F",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 9,
+        "fields": {
+            "username": "Loeldendo",
+            "email": "loeldendo@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1980-06-30",
+            "profession": "AS",
+            "phone_number": "+7766554433",
+            "sex": "M",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 10,
+        "fields": {
+            "username": "Lalnilmiar",
+            "email": "lalnilmiar@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1991-01-19",
+            "profession": "AM",
+            "phone_number": "+5544332211",
+            "sex": "F",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 11,
+        "fields": {
+            "username": "Kethmalmar",
+            "email": "kethmalmar@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1987-08-05",
+            "profession": "MA",
+            "phone_number": "+6677889900",
+            "sex": "M",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 12,
+        "fields": {
+            "username": "Garindia",
+            "email": "garindia@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1993-12-23",
+            "profession": "PA",
+            "phone_number": "+4433221100",
+            "sex": "F",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "accounts.customuserprofile",
+        "pk": 13,
+        "fields": {
+            "username": "Thraldan",
+            "email": "thraldan@example.com",
+            "password": "pbkdf2_sha256$260000$hashed_password",
+            "date_of_birth": "1989-02-11",
+            "profession": "DR",
+            "phone_number": "+6655443322",
+            "sex": "M",
+            "is_staff": false,
+            "is_active": true
+        }
+    }
+]

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}" />
+    <title>{% block title %}Magical Realm eBay{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <nav>
+          <ul class="menuItems">
+            <!-- Home -->
+            <li>
+              <a href="{% url 'marketplace_homepage' %}" data-item="Home"
+                >Home</a
+              >
+            </li>
+            <!-- Browse Items -->
+            <!-- Dropdown Menu-->
+            <li class="dropdown">
+              <a href="#" class="dropbtn" data-item="Browse Items"
+                >Browse Items</a
+              >
+              <ul class="dropdown-content">
+                {% for parent_category in categories %} 
+                {% if not parent_category.parent_cat %}
+                <li class="dropdown-submenu">
+                  <a href="{% url 'category_view' parent_category.slug %}">
+                    {{ parent_category.cat_name }}
+                  </a>
+                  {% if parent_category.item_category.all %}
+                  <ul class="dropdown-submenu-content">
+                    {% for sub_category in parent_category.item_category.all %}
+                    <li>
+                      <a href="{% url 'category_view' sub_category.slug %}">
+                        {{ sub_category.cat_name }}
+                      </a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </li>
+                {% endif %} 
+                {% endfor %}
+              </ul>
+            </li>
+            <!-- User Actions -->
+            {% if request.user.is_authenticated %}
+            <li>
+              <a href="{% url 'user_profile' %}" data-item="Profile"
+                >{{ request.user.username }}'s Profile</a
+              >
+            </li>
+            <li>
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" data-item="Logout">Logout</button>
+              </form>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'login' %}" data-item="Login">Login</a>
+            </li>
+            <li>
+              <a href="{% url 'register' %}" data-item="Register">Register</a>
+            </li>
+            {% endif %}
+            <!-- Shopping Cart -->
+            <li>
+              <a href="{% url 'view_cart' %}" data-item="Cart">Cart</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <!-- Message Display -->
+    {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer>
+      <div class="footer-copyright text-center">
+        &copy; Developed with ❤️ by F Lessmoellmann | Powered by Magic
+      </div>
+    </footer>
+  </body>
+</html>

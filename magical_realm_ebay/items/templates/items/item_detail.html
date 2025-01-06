@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ item.name }}</h2>
+<img src="{{ item.image.url }}" alt="{{ item.name }}">
+<p>{{ item.description }}</p>
+<p><strong>Price:</strong> ${{ item.price }}</p>
+<a href="{% url 'add_to_cart' item.pk %}">Add to Cart</a>
+{% endblock %}

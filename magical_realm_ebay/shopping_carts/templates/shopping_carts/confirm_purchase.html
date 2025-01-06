@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/shopping_cart_style.css' %}" />
+
+<div id="cart-container">
+  <div class="cart-card">
+    <h2>Confirm Your Purchase</h2>
+    <p>Are you sure you want to purchase the following items?</p>
+
+    <ul class="cart-items">
+      {% for cart_item in cart.cart.all %}
+      <li class="cart-item">
+        <div class="item-details">
+          <h4>{{ cart_item.item.item_name }}</h4>
+          <p>{{ cart_item.quantity }} x ${{ cart_item.price }}</p>
+          <p><strong>Total:</strong> ${{ cart_item.total_price }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Confirm Purchase</button>
+      <a href="{% url 'view_cart' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

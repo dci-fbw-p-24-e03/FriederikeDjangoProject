@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:wght@500&display=swap");
+
+#homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.welcome-card, .contact-card {
+    box-shadow: 0 15px 30px 1px #4e5250;
+    background: #e8e7e1;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    width: 700px;
+}
+
+.welcome-card h2, .contact-card h3 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 35px;
+    color: #35686d;
+    margin-bottom: 15px;
+}
+
+.welcome-card p, .contact-card p {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    color: #6c7673;
+    margin: 5px 0;
+}
+
+.contact-card p strong {
+    color: #35686d;
+    font-weight: bold;
+}

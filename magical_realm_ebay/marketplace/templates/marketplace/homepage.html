@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/homepage_style.css' %}" />
+
+<div id="homepage-container">
+    <!-- Welcome Section -->
+    <div class="welcome-card">
+        <h2>Welcome to the Magical Marketplace</h2>
+        <p>
+            Explore a mystical world where adventurers can buy and sell items 
+            for their quests. Whether you seek rare potions, enchanted scrolls, 
+            or legendary artifacts, the Magical Marketplace has it all!
+        </p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-card">
+        <h3>Have Questions?</h3>
+        <p>
+            If you have any questions or encounter any issues, feel free to 
+            reach out. We are here to help!
+        </p>
+        <p><strong>Email:</strong> support@magicalmarketplace.com</p>
+    </div>
+</div>
+{% endblock %}
