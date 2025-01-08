@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "marketplace",
     "shopping_carts",
     "debug_toolbar",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
