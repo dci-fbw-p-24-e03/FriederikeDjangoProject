@@ -14,14 +14,14 @@ Magical Realm eBay is a Django-powered marketplace for magical items, designed a
 
 ## Project Structure
 
-magical_realm_ebay/
-├── accounts/                # User authentication and profiles
-├── items/                   # Magical item management
-├── marketplace/             # Homepage, search, and category views
-├── shopping_carts/          # Shopping cart functionality
-├── static/                  # CSS, images, and other static files
-├── templates/               # Base and shared templates
-└── manage.py                # Django management script
+    magical_realm_ebay/
+    ├── accounts/                # User authentication and profiles
+    ├── items/                   # Magical item management
+    ├── marketplace/             # Homepage, search, and category views
+    ├── shopping_carts/          # Shopping cart functionality
+    ├── static/                  # CSS, images, and other static files
+    ├── templates/               # Base and shared templates
+    └── manage.py                # Django management script
 
 
 ## Requirements
