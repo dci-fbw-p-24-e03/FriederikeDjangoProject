@@ -77,6 +77,9 @@ The project uses a .env file for sensitive settings. Create a .env file in the r
     SECRET_KEY=your-secret-key
     DEBUG=True
 
+## URM Diagram
+![URL Diagram](https://github.com/dci-fbw-p-24-e03/FriederikeDjangoProject/blob/main/magical_realm_ebay/exomarket_friederike.png)
+
 ## Future Enhancements
 - Add Testing
 - Add Middleware and Logging
